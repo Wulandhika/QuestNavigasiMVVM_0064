@@ -3,6 +3,7 @@ package com.example.mytesting6.view
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.R
@@ -44,7 +45,23 @@ fun FormIsian(
                     singleLine = true,
                     modifier = Modifier
                         .padding(top = 28.dp)
-                )
+                        .width(250.dp), thickness = Thickness,color = Color.Red)
+
+                Row(
+                    jenisK.forEach {
+                            item->
+                        Row(verticalAlignment = Alignment.CenterVertically){
+                            RadioButton(
+                                selected = false,
+                                onClick = {item}
+                            )
+                            Text(text = item)
+                        }
+                    }
+            }
+        }
+
+        )
             }
         }
     }
